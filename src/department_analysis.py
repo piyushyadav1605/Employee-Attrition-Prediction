@@ -13,3 +13,13 @@ print("=" * 70)
 print("Departments with Left Employees")
 print("=" * 70)
 print(left_department_count)
+
+attrition_rate = (left_department_count / department_count) * 100
+print("=" * 70)
+print("Attrition Rate by Department")
+print("=" * 70)
+attrition_rate.sort_values(ascending=False, inplace=True)
+for department, rate in attrition_rate.items():
+    print(f"{department:<25} : {rate:.2f}%")
+
+
