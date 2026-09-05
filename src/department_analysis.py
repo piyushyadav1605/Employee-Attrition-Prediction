@@ -23,11 +23,20 @@ attrition_rate = attrition_rate.sort_values(ascending=False)
 for department, rate in attrition_rate.items():
     print(f"{department:<25} : {rate:.2f}%")
 plt.figure(figsize=(8,5))    
-plt.bar(attrition_rate.index, attrition_rate.values)
+bars = plt.bar(attrition_rate.index, attrition_rate.values)
 plt.title("Attrition Rate by Department")
 plt.xlabel("Department")
 plt.ylabel("Attrition Rate (%)")
+for bar in bars:
+    height = bar.get_height()
+    x=bar.get_x() + bar.get_width() / 2
+    y=height+1
+    plt.text(x, y, f"{height:.2f}%",)
+plt.xticks(rotation=45)
+plt.savefig("images/attrition_rate_by_department.png", )
+
 plt.show()
+
 
 
 
