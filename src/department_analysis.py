@@ -33,6 +33,7 @@ for bar in bars:
     y=height+1
     plt.text(x, y, f"{height:.2f}%",)
 plt.xticks(rotation=45)
+plt.ylim(0, max(attrition_rate.values) + 10)        
 plt.savefig("images/attrition_rate_by_department.png", )
 
 plt.show()
