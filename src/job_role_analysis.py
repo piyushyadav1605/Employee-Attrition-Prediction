@@ -22,6 +22,9 @@ print("="*70)
 top_5_roles = job_role_attrition_rate.head(5)
 print(top_5_roles)
 top_5_left_count = left_job_role_count[top_5_roles.index]
+print("="*70)
+print("Top 5 Job Roles with Highest Attrition Count")
+print("="*70)
 for job_role, count in top_5_left_count.items():
     print(f"{job_role:<25} : {count}")
 plt.figure(figsize=(9,5))
