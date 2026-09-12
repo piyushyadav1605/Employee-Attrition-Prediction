@@ -21,6 +21,9 @@ print("Top 5 Job Roles with Highest Attrition Rate")
 print("="*70)
 top_5_roles = job_role_attrition_rate.head(5)
 print(top_5_roles)
+top_5_left_count = left_job_role_count[top_5_roles.index]
+for job_role, count in top_5_left_count.items():
+    print(f"{job_role:<25} : {count}")
 plt.figure(figsize=(9,5))
 bars=plt.bar(top_5_roles.index, top_5_roles.values)
 plt.title("Top 5 Job Roles with Highest Attrition Rate")
@@ -36,3 +39,4 @@ plt.ylim(0, max(top_5_roles.values)+10)
 plt.tight_layout()
 plt.savefig("images/top_5_job_roles_with_highest_attrition_rate.png", )   
 plt.show() 
+
